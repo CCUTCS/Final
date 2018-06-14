@@ -1,4 +1,3 @@
-// 範例測資最後面要補換行
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -15,15 +14,20 @@ int main()
     char buff[MAXLEN];
     char **ptr = (char **) malloc(sizeof(char *) * MAXWORD);
     assert(ptr != NULL);
-    int i = 0, j = 0;
+    int i = 0, j = 0, slen;
     while(fgets(buff, MAXLEN, stdin) != NULL)
     {
+        slen = strlen(buff);
+        if(buff[slen-1] == '\n')
+        {
+            buff[slen-1] = '\0';
+        }
         ptr[i++] = (char *) strdup(buff);      
     }
     qsort(ptr, i, sizeof(char *), cmp);
     for(j = 0; j < i; j++)
     {
-        printf("%s", ptr[j]);
+        printf("%s\n", ptr[j]);
         free(ptr[j]);
     }
     free(ptr);

@@ -13,6 +13,7 @@ struct bst{
 
 void insert(struct bst* root, char input[]);
 void print_inorder(struct bst* root);
+void freebst(struct bst* root);
 
 int main()
 {
@@ -38,6 +39,7 @@ int main()
     }
 
     print_inorder(root);
+    freebst(root);
 
     return 0;
 }
@@ -86,4 +88,13 @@ void print_inorder(struct bst* root)
     print_inorder(root->lnode);
     printf("%d\t%s", root->cnt , root->str);
     print_inorder(root->rnode);
+}
+
+void freebst(struct bst* root)
+{
+    if(root == NULL)
+        return;
+    freebst(root->lnode);
+    freebst(root->rnode);
+    free(root);
 }

@@ -38,7 +38,7 @@ int main(int argc, char **argv)
         }
         else // 若是不存在把 key append 在 list 的後面(Insert at tail)
         {
-            listAppend(&head, &tail, buff); 
+            listAppend(&head, &tail, buff);
             listlen++;
         }
     }

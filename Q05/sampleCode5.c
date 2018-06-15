@@ -22,7 +22,7 @@ int main()
         {
             buff[slen-1] = '\0';
         }
-        ptr[i++] = (char *) strdup(buff);      
+        ptr[i++] = (char *) strdup(buff);
     }
     qsort(ptr, i, sizeof(char *), cmp);
     for(j = 0; j < i; j++)

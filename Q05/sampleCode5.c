@@ -18,10 +18,7 @@ int main()
     while(fgets(buff, MAXLEN, stdin) != NULL)
     {
         slen = strlen(buff);
-        if(buff[slen-1] == '\n')
-        {
-            buff[slen-1] = '\0';
-        }
+        buff[slen-1] = buff[slen-1] == '\n' ? '\0' : buff[slen-1];
         ptr[i++] = (char *) strdup(buff);
     }
     qsort(ptr, i, sizeof(char *), cmp);

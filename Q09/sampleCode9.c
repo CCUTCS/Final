@@ -4,7 +4,6 @@
 #include <assert.h>
 #define MAXLEN 1024
 
-
 int main()
 {
     int slen, flag;
@@ -19,6 +18,7 @@ int main()
             if(*p != *q)
             {
                 flag = 0;
+                break;
             }
         }
         if(flag)
